@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "boards.h": "c",
+        "pca10095.h": "c",
+        "nrf_gpio.h": "c"
+    }
+}
