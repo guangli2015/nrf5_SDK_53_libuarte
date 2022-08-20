@@ -504,9 +504,10 @@ ret_code_t nrf_libuarte_async_init(const nrf_libuarte_async_t * const p_libuarte
         //             nrf_uarte_event_address_get(p_libuarte->p_libuarte->uarte, NRF_UARTE_EVENT_RXDRDY),
         //             tmr_start_tsk,
         //             tmr_clear_tsk);
-        nrf_uarte_publish_set(p_libuarte->p_libuarte->uarte,NRF_UARTE_EVENT_RXDRDY,2);
-        nrf_rtc_subscribe_set(p_libuarte->p_rtc->p_reg,NRF_RTC_TASK_START,2);
-        nrf_rtc_subscribe_set(p_libuarte->p_rtc->p_reg,NRF_RTC_TASK_CLEAR,2);
+        nrf_uarte_publish_set(p_libuarte->p_libuarte->uarte,NRF_UARTE_EVENT_RXDRDY,p_libuarte->p_ctrl_blk->ppi_channels[NRF_LIBUARTE_ASYNC_PPI_CH_RXRDY_CLEAR]);
+        nrf_rtc_subscribe_set(p_libuarte->p_rtc->p_reg,NRF_RTC_TASK_START,p_libuarte->p_ctrl_blk->ppi_channels[NRF_LIBUARTE_ASYNC_PPI_CH_RXRDY_CLEAR]);
+        nrf_rtc_subscribe_set(p_libuarte->p_rtc->p_reg,NRF_RTC_TASK_CLEAR,p_libuarte->p_ctrl_blk->ppi_channels[NRF_LIBUARTE_ASYNC_PPI_CH_RXRDY_CLEAR]);
+        nrf_timer_subscribe_set(p_libuarte->p_libuarte->timer.p_reg,NRF_TIMER_TASK_COUNT,p_libuarte->p_ctrl_blk->ppi_channels[NRF_LIBUARTE_ASYNC_PPI_CH_RXRDY_CLEAR]);
         //nrf_timer_subscribe_set();
         
 

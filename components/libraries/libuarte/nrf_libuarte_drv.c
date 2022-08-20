@@ -347,14 +347,14 @@ static ret_code_t ppi_configure(const nrf_libuarte_drv_t * const p_libuarte,
     //{
     //    goto complete_config;
     //}
-     ret = nrfx_dppi_channel_alloc(&p_libuarte->ctrl_blk->ppi_channels[NRF_LIBUARTE_DRV_PPI_CH_RXRDY_TIMER_COUNT]);
-          if (ret != NRFX_SUCCESS)
-          {
-               //we don't free already allocated channels, system is wrongly configured.
-               goto complete_config;
-          }
-          nrf_uarte_publish_set(p_libuarte->uarte,NRF_UARTE_EVENT_RXDRDY,p_libuarte->ctrl_blk->ppi_channels[NRF_LIBUARTE_DRV_PPI_CH_RXRDY_TIMER_COUNT]);
-          nrf_timer_subscribe_set(p_libuarte->timer.p_reg,NRF_TIMER_TASK_COUNT,p_libuarte->ctrl_blk->ppi_channels[NRF_LIBUARTE_DRV_PPI_CH_RXRDY_TIMER_COUNT]);
+     //ret = nrfx_dppi_channel_alloc(&p_libuarte->ctrl_blk->ppi_channels[NRF_LIBUARTE_DRV_PPI_CH_RXRDY_TIMER_COUNT]);
+     //     if (ret != NRFX_SUCCESS)
+     //     {
+     //          //we don't free already allocated channels, system is wrongly configured.
+     //          goto complete_config;
+     //     }
+     //     nrf_uarte_publish_set(p_libuarte->uarte,NRF_UARTE_EVENT_RXDRDY,p_libuarte->ctrl_blk->ppi_channels[NRF_LIBUARTE_DRV_PPI_CH_RXRDY_TIMER_COUNT]);
+     //     nrf_timer_subscribe_set(p_libuarte->timer.p_reg,NRF_TIMER_TASK_COUNT,p_libuarte->ctrl_blk->ppi_channels[NRF_LIBUARTE_DRV_PPI_CH_RXRDY_TIMER_COUNT]);
 
     //ret = ppi_channel_configure(
     //        &p_libuarte->ctrl_blk->ppi_channels[NRF_LIBUARTE_DRV_PPI_CH_ENDRX_STARTRX],
