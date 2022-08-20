@@ -228,37 +228,79 @@ static void ppi_ch_disable(uint8_t * p_ch)
 /** @brief Enable PPI channels for RX. */
 static void rx_ppi_enable(const nrf_libuarte_drv_t * const p_libuarte)
 {
-    PPI_CHANNEL_FOR_M_N(p_libuarte, 0, NRF_LIBUARTE_DRV_PPI_CH_RX_GROUP_MAX, ppi_ch_enable);
+//PPI_CHANNEL_FOR_M_N(p_libuarte, 0, NRF_LIBUARTE_DRV_PPI_CH_RX_GROUP_MAX, ppi_ch_enable);
+    nrfx_err_t err;
+    
+     for (int i = 0; i < NRF_LIBUARTE_DRV_PPI_CH_RX_GROUP_MAX; i++) 
+        { 
+            if (p_libuarte->ctrl_blk->ppi_channels[i] < DPPI_CH_NUM) 
+            {     
+              //err = nrfx_ppi_channel_enable(*p_ch);
+              err = nrfx_dppi_channel_enable(p_libuarte->ctrl_blk->ppi_channels[i]);
+              ASSERT(err == NRFX_SUCCESS); 
+          } 
+        }
 }
 
 /** @brief Disable PPI channels for RX. */
 static void rx_ppi_disable(const nrf_libuarte_drv_t * const p_libuarte)
 {
-    PPI_CHANNEL_FOR_M_N(p_libuarte, 0, NRF_LIBUARTE_DRV_PPI_CH_RX_GROUP_MAX, ppi_ch_disable);
+    //PPI_CHANNEL_FOR_M_N(p_libuarte, 0, NRF_LIBUARTE_DRV_PPI_CH_RX_GROUP_MAX, ppi_ch_disable);
+        nrfx_err_t err;
+    
+     for (int i = 0; i < NRF_LIBUARTE_DRV_PPI_CH_RX_GROUP_MAX; i++) 
+        { 
+            if (p_libuarte->ctrl_blk->ppi_channels[i] < DPPI_CH_NUM) 
+            {     
+              //err = nrfx_ppi_channel_enable(*p_ch);
+              err = nrfx_dppi_channel_disable(p_libuarte->ctrl_blk->ppi_channels[i]);
+              ASSERT(err == NRFX_SUCCESS); 
+          } 
+        }
 }
 
 /** @brief Enable PPI channels for TX. */
 static void tx_ppi_enable(const nrf_libuarte_drv_t * const p_libuarte)
 {
-    PPI_CHANNEL_FOR_M_N(p_libuarte, NRF_LIBUARTE_DRV_PPI_CH_RX_GROUP_MAX,
-                        NRF_LIBUARTE_DRV_PPI_CH_MAX, ppi_ch_enable);
+    //PPI_CHANNEL_FOR_M_N(p_libuarte, NRF_LIBUARTE_DRV_PPI_CH_RX_GROUP_MAX,
+    //                    NRF_LIBUARTE_DRV_PPI_CH_MAX, ppi_ch_enable);
+      nrfx_err_t err;
+    
+     for (int i = NRF_LIBUARTE_DRV_PPI_CH_RX_GROUP_MAX; i < NRF_LIBUARTE_DRV_PPI_CH_MAX; i++) 
+        { 
+            if (p_libuarte->ctrl_blk->ppi_channels[i] < DPPI_CH_NUM) 
+            {     
+              //err = nrfx_ppi_channel_enable(*p_ch);
+              err = nrfx_dppi_channel_enable(p_libuarte->ctrl_blk->ppi_channels[i]);
+              ASSERT(err == NRFX_SUCCESS); 
+          } 
+        }
 }
 
 /** @brief Disable PPI channels for TX. */
 static void tx_ppi_disable(const nrf_libuarte_drv_t * const p_libuarte)
-{
-    PPI_CHANNEL_FOR_M_N(p_libuarte, NRF_LIBUARTE_DRV_PPI_CH_RX_GROUP_MAX,
-                        NRF_LIBUARTE_DRV_PPI_CH_MAX, ppi_ch_disable);
+{nrfx_err_t err;
+   // PPI_CHANNEL_FOR_M_N(p_libuarte, NRF_LIBUARTE_DRV_PPI_CH_RX_GROUP_MAX,
+   //                     NRF_LIBUARTE_DRV_PPI_CH_MAX, ppi_ch_disable);
+   for (int i = NRF_LIBUARTE_DRV_PPI_CH_RX_GROUP_MAX; i < NRF_LIBUARTE_DRV_PPI_CH_MAX; i++) 
+        { 
+            if (p_libuarte->ctrl_blk->ppi_channels[i] < DPPI_CH_NUM) 
+            {     
+              //err = nrfx_ppi_channel_enable(*p_ch);
+              err = nrfx_dppi_channel_disable(p_libuarte->ctrl_blk->ppi_channels[i]);
+              ASSERT(err == NRFX_SUCCESS); 
+          } 
+        }
 }
 
 static ret_code_t ppi_configure(const nrf_libuarte_drv_t * const p_libuarte,
                                 nrf_libuarte_drv_config_t * p_config)
 {
     ret_code_t ret;
-    uint32_t gr0_en_task = 0;
-    uint32_t gr0_dis_task = 0;
-    uint32_t gr1_en_task = 0;
-    uint32_t gr1_dis_task = 0;
+    //uint32_t gr0_en_task = 0;
+    //uint32_t gr0_dis_task = 0;
+    //uint32_t gr1_en_task = 0;
+    //uint32_t gr1_dis_task = 0;
 
     for (int i = 0; i < NRF_LIBUARTE_DRV_PPI_CH_MAX; i++)
     {
@@ -384,7 +426,7 @@ static ret_code_t ppi_configure(const nrf_libuarte_drv_t * const p_libuarte,
         //}
     }
 
-    if (p_config->rxstarted_tsk || gr1_dis_task)
+   // if (p_config->rxstarted_tsk || gr1_dis_task)
     {
         //ret = ppi_channel_configure(
         //        &p_libuarte->ctrl_blk->ppi_channels[NRF_LIBUARTE_DRV_PPI_CH_RXSTARTED_EXT_TSK],
@@ -748,6 +790,12 @@ void nrf_libuarte_drv_rts_set(const nrf_libuarte_drv_t * const p_libuarte)
 
 static void irq_handler(const nrf_libuarte_drv_t * const p_libuarte)
 {
+    
+     if (nrf_uarte_event_check(p_libuarte->uarte, NRF_UARTE_EVENT_RXDRDY))
+    {
+        nrf_uarte_event_clear(p_libuarte->uarte, NRF_UARTE_EVENT_RXDRDY);
+        
+    }
     if (nrf_uarte_event_check(p_libuarte->uarte, NRF_UARTE_EVENT_ERROR))
     {
         nrf_uarte_event_clear(p_libuarte->uarte, NRF_UARTE_EVENT_ERROR);

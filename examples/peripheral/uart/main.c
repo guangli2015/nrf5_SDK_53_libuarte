@@ -51,7 +51,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "nrf_libuarte_async.h"
-#include "nrf_drv_clock.h"
+#include "nrfx_clock.h"
 #include <bsp.h>
 #include "nrf_log_ctrl.h"
 #include "nrf_log_default_backends.h"
@@ -62,7 +62,9 @@ NRF_LIBUARTE_ASYNC_DEFINE(libuarte, 0, 0, 0, NRF_LIBUARTE_PERIPHERAL_NOT_USED, 2
 static uint8_t text[] = "UART example started.\r\n Loopback:\r\n";
 static uint8_t text_size = sizeof(text);
 static volatile bool m_loopback_phase;
-
+static uint8_t test=0;
+static volatile bool flag=true;
+static volatile uint8_t *pd;
 typedef struct {
     uint8_t * p_data;
     uint32_t length;
@@ -71,7 +73,8 @@ typedef struct {
 NRF_QUEUE_DEF(buffer_t, m_buf_queue, 10, NRF_QUEUE_MODE_NO_OVERFLOW);
 
 void uart_event_handler(void * context, nrf_libuarte_async_evt_t * p_evt)
-{
+{   uint32_t i;
+    
     nrf_libuarte_async_t * p_libuarte = (nrf_libuarte_async_t *)context;
     ret_code_t ret;
 
@@ -81,6 +84,18 @@ void uart_event_handler(void * context, nrf_libuarte_async_evt_t * p_evt)
             bsp_board_led_invert(0);
             break;
         case NRF_LIBUARTE_ASYNC_EVT_RX_DATA:
+        //pd=p_evt->data.rxtx.p_data;
+        //  for(i=0;i<p_evt->data.rxtx.length;i++)
+        //  {
+        //    if(*(pd) != test)
+        //    {
+        //        flag=false;
+        //        break;
+        //    }
+        //     ++test;
+        //     ++pd;
+          
+        //  }
             ret = nrf_libuarte_async_tx(p_libuarte,p_evt->data.rxtx.p_data, p_evt->data.rxtx.length);
             if (ret == NRF_ERROR_BUSY)
             {
@@ -158,7 +173,7 @@ int main(void)
 
     while (true)
     {
-        NRF_LOG_FLUSH();
+       // NRF_LOG_FLUSH();
     }
 }
 
