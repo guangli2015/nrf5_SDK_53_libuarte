@@ -81,21 +81,21 @@ void uart_event_handler(void * context, nrf_libuarte_async_evt_t * p_evt)
     switch (p_evt->type)
     {
         case NRF_LIBUARTE_ASYNC_EVT_ERROR:
-            bsp_board_led_invert(0);
+           // bsp_board_led_invert(0);
             break;
         case NRF_LIBUARTE_ASYNC_EVT_RX_DATA:
-        //pd=p_evt->data.rxtx.p_data;
-        //  for(i=0;i<p_evt->data.rxtx.length;i++)
-        //  {
-        //    if(*(pd) != test)
-        //    {
-        //        flag=false;
-        //        break;
-        //    }
-        //     ++test;
-        //     ++pd;
+        pd=p_evt->data.rxtx.p_data;
+          for(i=0;i<p_evt->data.rxtx.length;i++)
+          {
+            if(*(pd) != test)
+            {
+                flag=false;
+                break;
+            }
+             ++test;
+             ++pd;
           
-        //  }
+          }
             ret = nrf_libuarte_async_tx(p_libuarte,p_evt->data.rxtx.p_data, p_evt->data.rxtx.length);
             if (ret == NRF_ERROR_BUSY)
             {
@@ -111,7 +111,7 @@ void uart_event_handler(void * context, nrf_libuarte_async_evt_t * p_evt)
             {
                 APP_ERROR_CHECK(ret);
             }
-            bsp_board_led_invert(1);
+          //  bsp_board_led_invert(1);
             m_loopback_phase = true;
             break;
         case NRF_LIBUARTE_ASYNC_EVT_TX_DONE:
@@ -126,7 +126,7 @@ void uart_event_handler(void * context, nrf_libuarte_async_evt_t * p_evt)
                     UNUSED_RETURN_VALUE(nrf_libuarte_async_tx(p_libuarte, buf.p_data, buf.length));
                 }
             }
-            bsp_board_led_invert(2);
+          //  bsp_board_led_invert(2);
             break;
         default:
             break;
@@ -138,7 +138,7 @@ static void clk_event_handler(nrfx_clock_evt_type_t event){}
  */
 int main(void)
 {
-    bsp_board_init(BSP_INIT_LEDS);
+  //  bsp_board_init(BSP_INIT_LEDS);
     ret_code_t err_code;
     //ret_code_t ret = nrf_drv_clock_init();
     //APP_ERROR_CHECK(ret);
