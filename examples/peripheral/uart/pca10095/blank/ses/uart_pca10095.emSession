@@ -4,6 +4,7 @@
  <Breakpoints groups="Breakpoints" active_group="Breakpoints">
   <BreakpointListItem trigger="" line="92" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="../../../main.c" useHWbreakpoint="false"/>
   <BreakpointListItem trigger="" line="60" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="4" filename="../../../../../../modules/nrfx/mdk/ses_startup_nrf5340_application.s" useHWbreakpoint="false"/>
+  <Exceptions set="MemManage;UsageFault_Coprocessor;UsageFault_CheckingError;UsageFault_StateError;BusFault;ExceptionEntryReturnFault;HardFault;SecureFault"/>
  </Breakpoints>
  <ExecutionProfileWindow/>
  <FrameBufferWindow>
@@ -30,6 +31,8 @@
   <ProjectSessionItem path="uart_pca10095;uart_pca10095;nRF_Drivers"/>
   <ProjectSessionItem path="uart_pca10095;uart_pca10095;nRF_Libraries"/>
   <ProjectSessionItem path="uart_pca10095;uart_pca10095;nRF_Log"/>
+  <ProjectSessionItem path="uart_pca10095;uart_pca10095;nRF_Segger_RTT"/>
+  <ProjectSessionItem path="uart_pca10095;uart_pca10095;Segger Startup Files"/>
  </Project>
  <Register1>
   <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/MSP;CPU/PSP;CPU/PRIMASK;CPU/BASEPRI;CPU/FAULTMASK;CPU/CONTROL;CPU/MSPLIM;CPU/PSPLIM;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="uart_pca10095" decimalNodes="" octalNodes="" unsignedNodes=""/>
@@ -51,7 +54,7 @@
  </TraceWindow>
  <Watch1>
   <Watches active="1" update="Never">
-   <Watchpoint expression="p_libuarte->ctrl_blk->ppi_channels" name="p_libuarte->ctrl_blk->ppi_channels" radix="-1" linenumber="309" filename="../../../../../../components/libraries/libuarte/nrf_libuarte_drv.c"/>
+   <Watchpoint expression="p_libuarte->ctrl_blk->ppi_channels" name="p_libuarte->ctrl_blk->ppi_channels" radix="-1" linenumber="312" filename="../../../../../../components/libraries/libuarte/nrf_libuarte_drv.c"/>
    <Watchpoint expression="p_libuarte->p_ctrl_blk->ppi_channels" name="p_libuarte->p_ctrl_blk->ppi_channels" radix="-1" linenumber="493" filename="../../../../../../components/libraries/libuarte/nrf_libuarte_async.c"/>
    <Watchpoint expression="p_evt->data.rxtx.p_data" name="p_evt->data.rxtx.p_data" radix="-1" linenumber="90" filename="../../../main.c"/>
    <Watchpoint expression="*(pd)" name="*(pd)" radix="-1" linenumber="90" filename="../../../main.c"/>
@@ -69,21 +72,30 @@
  </Watch4>
  <Files>
   <SessionOpenFile windowGroup="DockRightTop" x="21" y="507" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/components/libraries/libuarte/nrf_libuarte_drv.c" useBinaryEdit="0" left="0" path="../../../../../../modules/nrfx/hal/nrf_uarte.h" selected="0" top="502" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockRightTop" x="160" y="356" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/components/libraries/libuarte/nrf_libuarte_async.c" useBinaryEdit="0" left="118" path="../../../../../../components/libraries/libuarte/nrf_libuarte_drv.c" selected="0" top="318" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="37" y="86" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../main.c" selected="1" top="77" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="44" y="509" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/examples/peripheral/uart/main.c" useBinaryEdit="0" left="4" path="../../../../../../components/libraries/libuarte/nrf_libuarte_async.c" selected="0" top="487" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockRightTop" x="4" y="795" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/components/libraries/libuarte/nrf_libuarte_async.c" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/libuarte/nrf_libuarte_drv.c" selected="0" top="764" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="139" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../main.c" selected="1" top="114" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="44" y="509" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/examples/peripheral/uart/main.c" useBinaryEdit="0" left="14" path="../../../../../../components/libraries/libuarte/nrf_libuarte_async.c" selected="0" top="129" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="329" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/components/libraries/libuarte/nrf_libuarte_async.c" useBinaryEdit="0" left="0" path="../../../../../../modules/nrfx/drivers/src/nrfx_rtc.c" selected="0" top="286" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="728" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/log/src/nrf_log_frontend.c" selected="0" top="702" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="207" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/modules/nrfx/drivers/src/nrfx_rtc.c" useBinaryEdit="0" left="0" path="../config/sdk_config.h" selected="0" top="178" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="22" y="117" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../../../modules/nrfx/soc/nrfx_irqs_nrf5340_application.h" selected="0" top="70" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="39" y="746" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/components/libraries/libuarte/nrf_libuarte_drv.c" useBinaryEdit="0" left="0" path="../config/sdk_config.h" selected="0" top="739" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="77" y="70" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/components/libraries/libuarte/nrf_libuarte_drv.c" useBinaryEdit="0" left="0" path="../../../../../../modules/nrfx/soc/nrfx_irqs_nrf5340_application.h" selected="0" top="43" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="11" y="90" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/components/libraries/libuarte/nrf_libuarte_async.c" useBinaryEdit="0" left="0" path="../../../../../../modules/nrfx/drivers/include/nrfx_dppi.h" selected="0" top="42" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="41" y="81" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/components/libraries/libuarte/nrf_libuarte_async.c" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/libuarte/nrf_libuarte_async.h" selected="0" top="64" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="21" y="347" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/components/libraries/libuarte/nrf_libuarte_async.c" useBinaryEdit="0" left="0" path="../../../../../../modules/nrfx/drivers/include/nrfx_rtc.h" selected="0" top="324" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="20" y="242" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/examples/peripheral/uart/main.c" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/libuarte/nrf_libuarte_async.h" selected="0" top="219" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="26" y="120" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/components/libraries/libuarte/nrf_libuarte_async.c" useBinaryEdit="0" left="0" path="../../../../../../modules/nrfx/drivers/include/nrfx_rtc.h" selected="0" top="111" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="8" y="119" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/components/libraries/libuarte/nrf_libuarte_drv.c" useBinaryEdit="0" left="0" path="../../../../../../modules/nrfx/mdk/nrf5340_application_peripherals.h" selected="0" top="97" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="71" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../../../modules/nrfx/mdk/ses_startup_nrf5340_application.s" selected="0" top="46" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="8" y="87" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/examples/peripheral/uart/main.c" useBinaryEdit="0" left="0" path="../../../../../../components/boards/pca10095.h" selected="0" top="65" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="86" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/examples/peripheral/uart/main.c" useBinaryEdit="0" left="0" path="../../../../../../components/boards/pca10095.h" selected="0" top="65" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="8" y="100" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/examples/peripheral/uart/main.c" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/log/nrf_log_ctrl.h" selected="0" top="75" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/components/libraries/libuarte/nrf_libuarte_async.h" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/libuarte/nrf_libuarte_drv.h" selected="0" top="54" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="176" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/components/libraries/libuarte/nrf_libuarte_async.h" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/libuarte/nrf_libuarte_drv.h" selected="0" top="141" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/components/libraries/libuarte/nrf_libuarte_async.h" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/balloc/nrf_balloc.h" selected="0" top="18" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/components/libraries/libuarte/nrf_libuarte_async.h" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/queue/nrf_queue.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="6" y="231" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/balloc/nrf_balloc.c" selected="0" top="213" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="8" y="202" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/log/src/nrf_log_internal.h" selected="0" top="167" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="99" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/util/app_error_weak.c" selected="0" top="74" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="15" y="64" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../../../modules/nrfx/drivers/include/nrfx_power_clock.h" selected="0" top="39" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="49" y="111" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../../../modules/nrfx/drivers/include/nrfx_timer.h" selected="0" top="67" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="40" y="219" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/util/app_util.h" selected="0" top="181" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="115" useTextEdit="1" openedFrom="C:/Work/nRF5_SDK_17.1.0_nRF53/components/libraries/libuarte/nrf_libuarte_drv.h" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/util/nordic_common.h" selected="0" top="99" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="uart_pca10095" fileDialogDefaultFilter="*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.hxx" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/Work/nRF5_SDK_17.1.0_nRF53/modules/nrfx/drivers/src" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <ARMCrossStudioWindow activeProject="uart_pca10095" fileDialogDefaultFilter="*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.hxx" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/Work/nRF5_SDK_17.1.0_nRF53/modules/nrfx/drivers/src" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>

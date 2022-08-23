@@ -68,6 +68,9 @@ static const nrf_libuarte_drv_t * m_libuarte_instance[2];
 #define libuarte_0_irq_handler SPIM0_SPIS0_TWIM0_TWIS0_UARTE0_IRQHandler
 #endif
 
+#ifdef nrfx_uarte_1_irq_handler
+#define UARTE1_IRQHandler SPIM1_SPIS1_TWIM1_TWIS1_UARTE1_IRQHandler
+#endif
 #if NRFX_CHECK(NRF_LIBUARTE_DRV_UARTE0)
 void libuarte_0_irq_handler(void);
 #endif
@@ -791,11 +794,6 @@ void nrf_libuarte_drv_rts_set(const nrf_libuarte_drv_t * const p_libuarte)
 static void irq_handler(const nrf_libuarte_drv_t * const p_libuarte)
 {
     
-     if (nrf_uarte_event_check(p_libuarte->uarte, NRF_UARTE_EVENT_RXDRDY))
-    {
-        nrf_uarte_event_clear(p_libuarte->uarte, NRF_UARTE_EVENT_RXDRDY);
-        
-    }
     if (nrf_uarte_event_check(p_libuarte->uarte, NRF_UARTE_EVENT_ERROR))
     {
         nrf_uarte_event_clear(p_libuarte->uarte, NRF_UARTE_EVENT_ERROR);

@@ -83,54 +83,54 @@
 #define NRFX_CLOCK_CONFIG_IRQ_PRIORITY 6
 #endif
 
-// <e> NRFX_CLOCK_CONFIG_LOG_ENABLED - Enables logging in the module.
-//==========================================================
-#ifndef NRFX_CLOCK_CONFIG_LOG_ENABLED
-#define NRFX_CLOCK_CONFIG_LOG_ENABLED 0
-#endif
-// <o> NRFX_CLOCK_CONFIG_LOG_LEVEL  - Default Severity level
+//// <e> NRFX_CLOCK_CONFIG_LOG_ENABLED - Enables logging in the module.
+////==========================================================
+//#ifndef NRFX_CLOCK_CONFIG_LOG_ENABLED
+//#define NRFX_CLOCK_CONFIG_LOG_ENABLED 0
+//#endif
+//// <o> NRFX_CLOCK_CONFIG_LOG_LEVEL  - Default Severity level
  
-// <0=> Off 
-// <1=> Error 
-// <2=> Warning 
-// <3=> Info 
-// <4=> Debug 
+//// <0=> Off 
+//// <1=> Error 
+//// <2=> Warning 
+//// <3=> Info 
+//// <4=> Debug 
 
-#ifndef NRFX_CLOCK_CONFIG_LOG_LEVEL
-#define NRFX_CLOCK_CONFIG_LOG_LEVEL 3
-#endif
+//#ifndef NRFX_CLOCK_CONFIG_LOG_LEVEL
+//#define NRFX_CLOCK_CONFIG_LOG_LEVEL 3
+//#endif
 
-// <o> NRFX_CLOCK_CONFIG_INFO_COLOR  - ANSI escape code prefix.
+//// <o> NRFX_CLOCK_CONFIG_INFO_COLOR  - ANSI escape code prefix.
  
-// <0=> Default 
-// <1=> Black 
-// <2=> Red 
-// <3=> Green 
-// <4=> Yellow 
-// <5=> Blue 
-// <6=> Magenta 
-// <7=> Cyan 
-// <8=> White 
+//// <0=> Default 
+//// <1=> Black 
+//// <2=> Red 
+//// <3=> Green 
+//// <4=> Yellow 
+//// <5=> Blue 
+//// <6=> Magenta 
+//// <7=> Cyan 
+//// <8=> White 
 
-#ifndef NRFX_CLOCK_CONFIG_INFO_COLOR
-#define NRFX_CLOCK_CONFIG_INFO_COLOR 0
-#endif
+//#ifndef NRFX_CLOCK_CONFIG_INFO_COLOR
+//#define NRFX_CLOCK_CONFIG_INFO_COLOR 0
+//#endif
 
-// <o> NRFX_CLOCK_CONFIG_DEBUG_COLOR  - ANSI escape code prefix.
+//// <o> NRFX_CLOCK_CONFIG_DEBUG_COLOR  - ANSI escape code prefix.
  
-// <0=> Default 
-// <1=> Black 
-// <2=> Red 
-// <3=> Green 
-// <4=> Yellow 
-// <5=> Blue 
-// <6=> Magenta 
-// <7=> Cyan 
-// <8=> White 
+//// <0=> Default 
+//// <1=> Black 
+//// <2=> Red 
+//// <3=> Green 
+//// <4=> Yellow 
+//// <5=> Blue 
+//// <6=> Magenta 
+//// <7=> Cyan 
+//// <8=> White 
 
-#ifndef NRFX_CLOCK_CONFIG_DEBUG_COLOR
-#define NRFX_CLOCK_CONFIG_DEBUG_COLOR 0
-#endif
+//#ifndef NRFX_CLOCK_CONFIG_DEBUG_COLOR
+//#define NRFX_CLOCK_CONFIG_DEBUG_COLOR 0
+//#endif
 
 // </e>
 
@@ -250,58 +250,58 @@
 // <6=> 6 
 // <7=> 7 
 
-#ifndef NRFX_RTC_DEFAULT_CONFIG_IRQ_PRIORITY
-#define NRFX_RTC_DEFAULT_CONFIG_IRQ_PRIORITY 6
-#endif
+//#ifndef NRFX_RTC_DEFAULT_CONFIG_IRQ_PRIORITY
+//#define NRFX_RTC_DEFAULT_CONFIG_IRQ_PRIORITY 6
+//#endif
 
-// <e> NRFX_RTC_CONFIG_LOG_ENABLED - Enables logging in the module.
-//==========================================================
-#ifndef NRFX_RTC_CONFIG_LOG_ENABLED
-#define NRFX_RTC_CONFIG_LOG_ENABLED 0
-#endif
-// <o> NRFX_RTC_CONFIG_LOG_LEVEL  - Default Severity level
+//// <e> NRFX_RTC_CONFIG_LOG_ENABLED - Enables logging in the module.
+////==========================================================
+//#ifndef NRFX_RTC_CONFIG_LOG_ENABLED
+//#define NRFX_RTC_CONFIG_LOG_ENABLED 0
+//#endif
+//// <o> NRFX_RTC_CONFIG_LOG_LEVEL  - Default Severity level
  
-// <0=> Off 
-// <1=> Error 
-// <2=> Warning 
-// <3=> Info 
-// <4=> Debug 
+//// <0=> Off 
+//// <1=> Error 
+//// <2=> Warning 
+//// <3=> Info 
+//// <4=> Debug 
 
-#ifndef NRFX_RTC_CONFIG_LOG_LEVEL
-#define NRFX_RTC_CONFIG_LOG_LEVEL 3
-#endif
+//#ifndef NRFX_RTC_CONFIG_LOG_LEVEL
+//#define NRFX_RTC_CONFIG_LOG_LEVEL 3
+//#endif
 
-// <o> NRFX_RTC_CONFIG_INFO_COLOR  - ANSI escape code prefix.
+//// <o> NRFX_RTC_CONFIG_INFO_COLOR  - ANSI escape code prefix.
  
-// <0=> Default 
-// <1=> Black 
-// <2=> Red 
-// <3=> Green 
-// <4=> Yellow 
-// <5=> Blue 
-// <6=> Magenta 
-// <7=> Cyan 
-// <8=> White 
+//// <0=> Default 
+//// <1=> Black 
+//// <2=> Red 
+//// <3=> Green 
+//// <4=> Yellow 
+//// <5=> Blue 
+//// <6=> Magenta 
+//// <7=> Cyan 
+//// <8=> White 
 
-#ifndef NRFX_RTC_CONFIG_INFO_COLOR
-#define NRFX_RTC_CONFIG_INFO_COLOR 0
-#endif
+//#ifndef NRFX_RTC_CONFIG_INFO_COLOR
+//#define NRFX_RTC_CONFIG_INFO_COLOR 0
+//#endif
 
-// <o> NRFX_RTC_CONFIG_DEBUG_COLOR  - ANSI escape code prefix.
+//// <o> NRFX_RTC_CONFIG_DEBUG_COLOR  - ANSI escape code prefix.
  
-// <0=> Default 
-// <1=> Black 
-// <2=> Red 
-// <3=> Green 
-// <4=> Yellow 
-// <5=> Blue 
-// <6=> Magenta 
-// <7=> Cyan 
-// <8=> White 
+//// <0=> Default 
+//// <1=> Black 
+//// <2=> Red 
+//// <3=> Green 
+//// <4=> Yellow 
+//// <5=> Blue 
+//// <6=> Magenta 
+//// <7=> Cyan 
+//// <8=> White 
 
-#ifndef NRFX_RTC_CONFIG_DEBUG_COLOR
-#define NRFX_RTC_CONFIG_DEBUG_COLOR 0
-#endif
+//#ifndef NRFX_RTC_CONFIG_DEBUG_COLOR
+//#define NRFX_RTC_CONFIG_DEBUG_COLOR 0
+//#endif
 
 // </e>
 
@@ -395,58 +395,58 @@
 // <6=> 6 
 // <7=> 7 
 
-#ifndef NRFX_TIMER_DEFAULT_CONFIG_IRQ_PRIORITY
-#define NRFX_TIMER_DEFAULT_CONFIG_IRQ_PRIORITY 6
-#endif
+//#ifndef NRFX_TIMER_DEFAULT_CONFIG_IRQ_PRIORITY
+//#define NRFX_TIMER_DEFAULT_CONFIG_IRQ_PRIORITY 6
+//#endif
 
-// <e> NRFX_TIMER_CONFIG_LOG_ENABLED - Enables logging in the module.
-//==========================================================
-#ifndef NRFX_TIMER_CONFIG_LOG_ENABLED
-#define NRFX_TIMER_CONFIG_LOG_ENABLED 0
-#endif
-// <o> NRFX_TIMER_CONFIG_LOG_LEVEL  - Default Severity level
+//// <e> NRFX_TIMER_CONFIG_LOG_ENABLED - Enables logging in the module.
+////==========================================================
+//#ifndef NRFX_TIMER_CONFIG_LOG_ENABLED
+//#define NRFX_TIMER_CONFIG_LOG_ENABLED 0
+//#endif
+//// <o> NRFX_TIMER_CONFIG_LOG_LEVEL  - Default Severity level
  
-// <0=> Off 
-// <1=> Error 
-// <2=> Warning 
-// <3=> Info 
-// <4=> Debug 
+//// <0=> Off 
+//// <1=> Error 
+//// <2=> Warning 
+//// <3=> Info 
+//// <4=> Debug 
 
-#ifndef NRFX_TIMER_CONFIG_LOG_LEVEL
-#define NRFX_TIMER_CONFIG_LOG_LEVEL 3
-#endif
+//#ifndef NRFX_TIMER_CONFIG_LOG_LEVEL
+//#define NRFX_TIMER_CONFIG_LOG_LEVEL 3
+//#endif
 
-// <o> NRFX_TIMER_CONFIG_INFO_COLOR  - ANSI escape code prefix.
+//// <o> NRFX_TIMER_CONFIG_INFO_COLOR  - ANSI escape code prefix.
  
-// <0=> Default 
-// <1=> Black 
-// <2=> Red 
-// <3=> Green 
-// <4=> Yellow 
-// <5=> Blue 
-// <6=> Magenta 
-// <7=> Cyan 
-// <8=> White 
+//// <0=> Default 
+//// <1=> Black 
+//// <2=> Red 
+//// <3=> Green 
+//// <4=> Yellow 
+//// <5=> Blue 
+//// <6=> Magenta 
+//// <7=> Cyan 
+//// <8=> White 
 
-#ifndef NRFX_TIMER_CONFIG_INFO_COLOR
-#define NRFX_TIMER_CONFIG_INFO_COLOR 0
-#endif
+//#ifndef NRFX_TIMER_CONFIG_INFO_COLOR
+//#define NRFX_TIMER_CONFIG_INFO_COLOR 0
+//#endif
 
-// <o> NRFX_TIMER_CONFIG_DEBUG_COLOR  - ANSI escape code prefix.
+//// <o> NRFX_TIMER_CONFIG_DEBUG_COLOR  - ANSI escape code prefix.
  
-// <0=> Default 
-// <1=> Black 
-// <2=> Red 
-// <3=> Green 
-// <4=> Yellow 
-// <5=> Blue 
-// <6=> Magenta 
-// <7=> Cyan 
-// <8=> White 
+//// <0=> Default 
+//// <1=> Black 
+//// <2=> Red 
+//// <3=> Green 
+//// <4=> Yellow 
+//// <5=> Blue 
+//// <6=> Magenta 
+//// <7=> Cyan 
+//// <8=> White 
 
-#ifndef NRFX_TIMER_CONFIG_DEBUG_COLOR
-#define NRFX_TIMER_CONFIG_DEBUG_COLOR 0
-#endif
+//#ifndef NRFX_TIMER_CONFIG_DEBUG_COLOR
+//#define NRFX_TIMER_CONFIG_DEBUG_COLOR 0
+//#endif
 
 // </e>
 
@@ -624,50 +624,50 @@
 #endif
 // <e> NRF_BALLOC_CONFIG_DEBUG_ENABLED - Enables debug mode in the module.
 //==========================================================
-#ifndef NRF_BALLOC_CONFIG_DEBUG_ENABLED
-#define NRF_BALLOC_CONFIG_DEBUG_ENABLED 0
-#endif
+//#ifndef NRF_BALLOC_CONFIG_DEBUG_ENABLED
+//#define NRF_BALLOC_CONFIG_DEBUG_ENABLED 0
+//#endif
 // <o> NRF_BALLOC_CONFIG_HEAD_GUARD_WORDS - Number of words used as head guard.  <0-255> 
 
 
-#ifndef NRF_BALLOC_CONFIG_HEAD_GUARD_WORDS
-#define NRF_BALLOC_CONFIG_HEAD_GUARD_WORDS 1
-#endif
+//#ifndef NRF_BALLOC_CONFIG_HEAD_GUARD_WORDS
+//#define NRF_BALLOC_CONFIG_HEAD_GUARD_WORDS 1
+//#endif
 
 // <o> NRF_BALLOC_CONFIG_TAIL_GUARD_WORDS - Number of words used as tail guard.  <0-255> 
 
 
-#ifndef NRF_BALLOC_CONFIG_TAIL_GUARD_WORDS
-#define NRF_BALLOC_CONFIG_TAIL_GUARD_WORDS 1
-#endif
+//#ifndef NRF_BALLOC_CONFIG_TAIL_GUARD_WORDS
+//#define NRF_BALLOC_CONFIG_TAIL_GUARD_WORDS 1
+//#endif
 
 // <q> NRF_BALLOC_CONFIG_BASIC_CHECKS_ENABLED  - Enables basic checks in this module.
  
 
-#ifndef NRF_BALLOC_CONFIG_BASIC_CHECKS_ENABLED
-#define NRF_BALLOC_CONFIG_BASIC_CHECKS_ENABLED 0
-#endif
+//#ifndef NRF_BALLOC_CONFIG_BASIC_CHECKS_ENABLED
+//#define NRF_BALLOC_CONFIG_BASIC_CHECKS_ENABLED 0
+//#endif
 
 // <q> NRF_BALLOC_CONFIG_DOUBLE_FREE_CHECK_ENABLED  - Enables double memory free check in this module.
  
 
-#ifndef NRF_BALLOC_CONFIG_DOUBLE_FREE_CHECK_ENABLED
-#define NRF_BALLOC_CONFIG_DOUBLE_FREE_CHECK_ENABLED 0
-#endif
+//#ifndef NRF_BALLOC_CONFIG_DOUBLE_FREE_CHECK_ENABLED
+//#define NRF_BALLOC_CONFIG_DOUBLE_FREE_CHECK_ENABLED 0
+//#endif
 
 // <q> NRF_BALLOC_CONFIG_DATA_TRASHING_CHECK_ENABLED  - Enables free memory corruption check in this module.
  
 
-#ifndef NRF_BALLOC_CONFIG_DATA_TRASHING_CHECK_ENABLED
-#define NRF_BALLOC_CONFIG_DATA_TRASHING_CHECK_ENABLED 0
-#endif
+//#ifndef NRF_BALLOC_CONFIG_DATA_TRASHING_CHECK_ENABLED
+//#define NRF_BALLOC_CONFIG_DATA_TRASHING_CHECK_ENABLED 0
+//#endif
 
-// <q> NRF_BALLOC_CLI_CMDS  - Enable CLI commands specific to the module
+//// <q> NRF_BALLOC_CLI_CMDS  - Enable CLI commands specific to the module
  
 
-#ifndef NRF_BALLOC_CLI_CMDS
-#define NRF_BALLOC_CLI_CMDS 0
-#endif
+//#ifndef NRF_BALLOC_CLI_CMDS
+//#define NRF_BALLOC_CLI_CMDS 0
+//#endif
 
 // </e>
 
@@ -695,9 +695,9 @@
 // <q> NRF_QUEUE_CLI_CMDS  - Enable CLI commands specific to the module
  
 
-#ifndef NRF_QUEUE_CLI_CMDS
-#define NRF_QUEUE_CLI_CMDS 0
-#endif
+//#ifndef NRF_QUEUE_CLI_CMDS
+//#define NRF_QUEUE_CLI_CMDS 0
+//#endif
 
 // </e>
 
@@ -771,9 +771,9 @@
 
 // </h> 
 //==========================================================
-#ifndef NRF_LOG_BACKEND_RTT_ENABLED
-#define NRF_LOG_BACKEND_RTT_ENABLED 0
-#endif
+//#ifndef NRF_LOG_BACKEND_RTT_ENABLED
+//#define NRF_LOG_BACKEND_RTT_ENABLED 0
+//#endif
 
 #ifndef NRF_LOG_ENABLED
 #define NRF_LOG_ENABLED 0
